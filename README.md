@@ -1,9 +1,9 @@
 # 🎧 KINETIX KX-01 — Interactive 3D Acoustic Product Landing Page
 
-> **Progree Frontend Development Internship — Task 02**  
+> **Progree Frontend Development Internship - Task 02**  
 > A mobile-responsive, Neo-Brutalist Cyber-Acoustic marketing landing page featuring a real-time interactive **Three.js 3D headphone model**, scroll-driven exploded engineering view, and live neural noise-cancellation telemetry.
 
-🔗 **Live Demo:** [View Deployed Site](https://Ahmed-Ashraf-74.github.io/kinetix-kx01-landing/)
+🔗 **Live Demo:** [View Deployed Site](https://ahmed-ashraf-74.github.io/Progree-task2-kinetix-audio/)
 
 ---
 
