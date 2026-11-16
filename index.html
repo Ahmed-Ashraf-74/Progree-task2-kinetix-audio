@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KINETIX KX-01 // Neural ANC & Spatial Audio</title>
+    <meta
+      name="description"
+      content="Kinetix KX-01: AI-powered adaptive active noise cancellation and 360° spatial acoustic headphones."
+    />
+
+    <!-- Google Fonts: Space Grotesk (Display), Inter (Body), JetBrains Mono (HUD Tech) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Custom HUD Cursor (Desktop) -->
+    <div class="custom-cursor" id="customCursor" aria-hidden="true">
+      <span class="cursor-label" id="cursorLabel">DRAG 3D</span>
+    </div>
+
+    <!-- Fixed 3D WebGL Canvas Stage -->
+    <div class="webgl-stage" id="webglStage" aria-hidden="true"></div>
+
+    <!-- Semantic Top HUD Navigation -->
+    <header class="hud-header" id="top">
+      <div class="container header-inner">
+        <div class="hud-meta">
+          <a href="#top" class="brand-logo" aria-label="Kinetix Audio Home">
+            <span class="brand-mark"></span>
+            <span>KINETIX<span class="accent-text">.KX01</span></span>
+          </a>
+          <span class="hud-badge desktop-only">
+            <span class="pulse-dot"></span> NEURAL ANC: ACTIVE
+          </span>
+        </div>
+
+        <nav class="main-nav" id="mainNav" aria-label="Primary Navigation">
+          <ul class="nav-list">
+            <li>
+              <a href="#architecture" class="nav-link">[01] ARCHITECTURE</a>
+            </li>
+            <li><a href="#modes" class="nav-link">[02] AI MODES</a></li>
+            <li><a href="#specs" class="nav-link">[03] SPECS</a></li>
+            <li><a href="#editions" class="nav-link">[04] EDITIONS</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a href="#editions" class="btn-chamfer btn-primary"
+            >PRE-ORDER — $349</a
+          >
+          <button
+            class="mobile-toggle"
+            id="mobileToggle"
+            aria-label="Toggle Menu"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Semantic Content -->
+    <main>
+      <!-- HERO SECTION -->
+      <section class="hero-section" id="hero">
+        <!-- Background Kinetic Marquee -->
+        <div class="kinetic-marquee" aria-hidden="true">
+          <div class="marquee-track">
+            <span>PURE SILENCE // NEURAL ENGINE // 360° SPATIAL // </span>
+            <span>PURE SILENCE // NEURAL ENGINE // 360° SPATIAL // </span>
+          </div>
+        </div>
+
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <div class="tech-tag">MODEL: KX-01 // GEN-4 ACOUSTICS</div>
+            <h1 class="hero-title">
+              SCULPT THE <span class="accent-text">SILENCE</span> AROUND YOU.
+            </h1>
+            <p class="hero-subtitle">
+              Real-time neural audio processing that isolates human voices while
+              erasing -48dB of ambient chaos. Engineered with 40mm Beryllium
+              drivers.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#editions" class="btn-chamfer btn-primary"
+                >RESERVE UNIT</a
+              >
+              <button
+                type="button"
+                class="btn-chamfer btn-outline"
+                id="ancToggleBtn"
+              >
+                <span id="ancBtnText">TEST NEURAL ANC: ON</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Interactive 3D Drag Hint & Live Telemetry -->
+          <aside class="hero-hud-panel" aria-label="Live Acoustic Telemetry">
+            <div class="drag-prompt">
+              <span class="drag-icon">⟲</span> HOLD & DRAG 3D MODEL
+            </div>
+
+            <div class="telemetry-card">
+              <div class="telemetry-header">
+                <span>AMBIENT ATTENUATION</span>
+                <span class="lime-text" id="dbReadout">-48.4 dB</span>
+              </div>
+              <!-- Live CSS/JS Soundwave Visualizer -->
+              <div class="waveform-box" id="waveformBox" aria-hidden="true">
+                <span></span><span></span><span></span><span></span
+                ><span></span> <span></span><span></span><span></span
+                ><span></span><span></span> <span></span><span></span
+                ><span></span><span></span><span></span> <span></span
+                ><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="telemetry-footer">
+                <span>LATENCY: 1.8ms</span>
+                <span>CODEC: LDAC / LOSSLESS</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Bottom Hero Technical Strip -->
+        <div class="container hero-bottom-strip">
+          <span>SERIAL // KX01-2026-884A</span>
+          <span>BATTERY // 60 HRS CONTINUOUS</span>
+          <span>SCROLL TO EXPLODE CHASSIS ↓</span>
+        </div>
+      </section>
+
+      <!-- SECTION 01: EXPLODED ARCHITECTURE -->
+      <section class="section architecture-section" id="architecture">
+        <div class="container">
+          <div class="section-header-grid">
+            <span class="section-num">001</span>
+            <div>
+              <p class="tech-tag">// INTERNAL HARDWARE TOPOLOGY</p>
+              <h2 class="section-title">PRECISION ACOUSTIC ENGINEERING</h2>
+            </div>
+          </div>
+
+          <div class="architecture-layout">
+            <div class="arch-spacer" aria-hidden="true"></div>
+
+            <div class="arch-cards-stack">
+              <article class="tech-card reveal-up">
+                <div class="card-top">
+                  <span class="card-index">LAYER // 01</span>
+                  <span class="card-code">DRV-40MM</span>
+                </div>
+                <h3>40mm Beryllium Dynamic Drivers</h3>
+                <p>
+                  Ultra-rigid acoustic diaphragms deliver distortion-free
+                  sub-bass down to 4Hz and crystalline highs up to 45kHz.
+                </p>
+              </article>
+
+              <article class="tech-card reveal-up">
+                <div class="card-top">
+                  <span class="card-index">LAYER // 02</span>
+                  <span class="card-code">NPU-DUAL</span>
+                </div>
+                <h3>Dual Neural AI Co-Processors</h3>
+                <p>
+                  Samples external noise 48,000 times per second using 8
+                  beamforming microphones to cancel unpredictable city
+                  frequencies.
+                </p>
+              </article>
+
+              <article class="tech-card reveal-up">
+                <div class="card-top">
+                  <span class="card-index">LAYER // 03</span>
+                  <span class="card-code">FOAM-X2</span>
+                </div>
+                <h3>Zero-Pressure Cryo Memory Cushions</h3>
+                <p>
+                  Cooling gel-infused vegan leather molds seamlessly around
+                  eyewear and ear geometry for 12-hour studio sessions.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 02: AI ACOUSTIC MODES (INTERACTIVE BENTO GRID) -->
+      <section class="section modes-section" id="modes">
+        <div class="container">
+          <div class="section-header-grid">
+            <span class="section-num">002</span>
+            <div>
+              <p class="tech-tag">
+                // ADAPTIVE DSP PROFILES (CLICK TO PREVIEW)
+              </p>
+              <h2 class="section-title">NEURAL SOUND ENVIRONMENTS</h2>
+            </div>
+          </div>
+
+          <div class="bento-grid">
+            <article
+              class="bento-card bento-large mode-trigger active"
+              data-mode="isolation"
+              data-color="#ff4d00"
+            >
+              <div class="bento-meta">
+                <span>MODE 01 // DEFAULT</span>
+                <span class="status-pill">ACTIVE</span>
+              </div>
+              <h3>Studio Isolation</h3>
+              <p>
+                Total acoustic blackout. Eliminates aircraft engines, subway
+                rumble, and open-office chatter instantly.
+              </p>
+              <div class="bento-metric">-48dB ATTENUATION</div>
+            </article>
+
+            <article
+              class="bento-card mode-trigger"
+              data-mode="voice"
+              data-color="#c8ff00"
+            >
+              <div class="bento-meta">
+                <span>MODE 02 // AI FILTER</span>
+                <span class="status-pill">SELECT</span>
+              </div>
+              <h3>Vocal Focus+</h3>
+              <p>
+                Suppresses background café noise while amplifying human speech
+                directly in front of you.
+              </p>
+              <div class="bento-metric">+14dB VOICE CLARITY</div>
+            </article>
+
+            <article
+              class="bento-card mode-trigger"
+              data-mode="spatial"
+              data-color="#00e5ff"
+            >
+              <div class="bento-meta">
+                <span>MODE 03 // GYRO TRACK</span>
+                <span class="status-pill">SELECT</span>
+              </div>
+              <h3>360° Spatial Cinema</h3>
+              <p>
+                Dynamic head-tracking anchors soundstage coordinates in physical
+                space as you move.
+              </p>
+              <div class="bento-metric">9-AXIS IMU SENSOR</div>
+            </article>
+
+            <article
+              class="bento-card bento-wide mode-trigger"
+              data-mode="gaming"
+              data-color="#b84dff"
+            >
+              <div class="bento-meta">
+                <span>MODE 04 // ZERO LAG</span>
+                <span class="status-pill">SELECT</span>
+              </div>
+              <h3>Hyper-Low Latency Wireless</h3>
+              <p>
+                Direct 2.4GHz USB-C lossless dongle bypasses Bluetooth
+                compression for competitive reaction speeds.
+              </p>
+              <div class="bento-metric">1.8ms RESPONSE</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 03: TECHNICAL SPECIFICATIONS -->
+      <section class="section specs-section" id="specs">
+        <div class="container">
+          <div class="section-header-grid">
+            <span class="section-num">003</span>
+            <div>
+              <p class="tech-tag">// HARDWARE TELEMETRY SHEET</p>
+              <h2 class="section-title">TECHNICAL SPECIFICATIONS</h2>
+            </div>
+          </div>
+
+          <div class="specs-grid">
+            <div class="spec-item">
+              <span class="spec-label">FREQUENCY RESPONSE</span>
+              <strong class="spec-value">4 Hz – 45,000 Hz</strong>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">DRIVER ARCHITECTURE</span>
+              <strong class="spec-value">40mm Custom Beryllium</strong>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">MICROPHONE ARRAY</span>
+              <strong class="spec-value">8x Digital MEMS Beamforming</strong>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">CONNECTIVITY</span>
+              <strong class="spec-value">Bluetooth 5.4 / USB-C DAC</strong>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">BATTERY ENDURANCE</span>
+              <strong class="spec-value">60 Hrs (ANC On) / 85 Hrs (Off)</strong>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">CHASSIS WEIGHT</span>
+              <strong class="spec-value">254 Grams (Anodized Alloy)</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 04: EDITIONS & PRE-ORDER -->
+      <section class="section editions-section" id="editions">
+        <div class="container">
+          <div class="section-header-grid">
+            <span class="section-num">004</span>
+            <div>
+              <p class="tech-tag">// FIRST BATCH PRODUCTION</p>
+              <h2 class="section-title">SELECT YOUR CHASSIS FINISH</h2>
+            </div>
+          </div>
+
+          <div class="editions-grid">
+            <article
+              class="edition-card active-edition"
+              data-finish="titanium"
+              data-hex="#737d91"
+              data-accent="#ff4d00"
+            >
+              <div
+                class="swatch"
+                style="
+                  background: linear-gradient(135deg, #737d91 60%, #ff4d00 60%);
+                "
+              ></div>
+              <h3>TITANIUM SLATE // SIGNAL</h3>
+              <p>
+                Brushed metallic slate-titanium alloy with Signal Orange
+                acoustic rings.
+              </p>
+              <div class="edition-price">$349 USD</div>
+              <button
+                type="button"
+                class="btn-chamfer btn-primary full-width order-btn"
+              >
+                CONFIGURE & RESERVE
+              </button>
+            </article>
+
+            <article
+              class="edition-card"
+              data-finish="graphite"
+              data-hex="#3b4150"
+              data-accent="#c8ff00"
+            >
+              <div
+                class="swatch"
+                style="
+                  background: linear-gradient(135deg, #3b4150 60%, #c8ff00 60%);
+                "
+              ></div>
+              <h3>ANODIZED GRAPHITE // VOLT</h3>
+              <p>
+                Deep gunmetal graphite chassis paired with Acid Volt telemetry
+                LEDs.
+              </p>
+              <div class="edition-price">$379 USD</div>
+              <button
+                type="button"
+                class="btn-chamfer btn-outline full-width order-btn"
+              >
+                CONFIGURE & RESERVE
+              </button>
+            </article>
+
+            <article
+              class="edition-card"
+              data-finish="arctic"
+              data-hex="#d8dee9"
+              data-accent="#00e5ff"
+            >
+              <div
+                class="swatch"
+                style="
+                  background: linear-gradient(135deg, #d8dee9 60%, #00e5ff 60%);
+                "
+              ></div>
+              <h3>ARCTIC CERAMIC // CYAN</h3>
+              <p>
+                Scratch-resistant ceramic frost coating with Cyber Cyan accent
+                rings.
+              </p>
+              <div class="edition-price">$379 USD</div>
+              <button
+                type="button"
+                class="btn-chamfer btn-outline full-width order-btn"
+              >
+                CONFIGURE & RESERVE
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Semantic Technical Footer -->
+    <footer class="hud-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="#top" class="brand-logo">
+            <span class="brand-mark"></span>
+            <span>KINETIX<span class="accent-text">.KX01</span></span>
+          </a>
+          <p class="footer-note">
+            IDENTIFICATION NUMBER — KX01-884920-CAIRO<br />
+            ENGINEERED FOR PURE ACOUSTIC CLARITY.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>NAVIGATION</h4>
+          <ul>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#modes">AI Sound Modes</a></li>
+            <li><a href="#specs">Tech Specs</a></li>
+            <li><a href="#editions">Pre-Order</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>SYSTEM</h4>
+          <ul>
+            <li><a href="#top">Firmware v2.4</a></li>
+            <li><a href="#top">Acoustic Lab</a></li>
+            <li><a href="#top">Warranty & Support</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <span>© 2026 KINETIX AUDIO LABS. ALL RIGHTS RESERVED.</span>
+        <span>DESIGNED & CODED BY AHMED ASHRAF</span>
+      </div>
+    </footer>
+
+    <!-- Reservation Confirmation Toast -->
+    <div class="toast-notification" id="toast" role="status" aria-live="polite">
+      <span class="pulse-dot"></span>
+      <span id="toastMsg">UNIT ADDED TO RESERVATION QUEUE</span>
+    </div>
+
+    <!-- Three.js CDN for Interactive 3D Headphone -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
